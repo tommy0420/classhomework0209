@@ -2,11 +2,11 @@ import React from "react"
 import Form from "./Form"
 import List from "./List"
 
-const App = () => {
+const App = ({ songs }) => {
     return (
         <div>
             <Form />
-            <List />
+            <List songs={songs} />
         </div>
     )
 }
