@@ -1,8 +1,8 @@
 import React from "react"
 
-const Item = ({ song }) => {
+const Item = ({ todo }) => {
     return (
-        <li>{song}</li>
+        <li>{todo}</li>
     )
 }
 export default Item

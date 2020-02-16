@@ -4,7 +4,7 @@ const Form = () => {
     return (
         <form action="#">
             <input type="text" />
-            <button type="button">確定</button>
+            <button type="submit">追加</button>
         </form>
     )
 }

@@ -2,13 +2,14 @@ import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
 
-const songs = [
-    "キセキ",
-    "遥か",
-    "アイノカタチ"
+const todos = [
+    "学校行く",
+    "部活する",
+    "音楽聴く",
+    "寝る"
 ]
 
 ReactDOM.render(
-    <App songs={songs} />,
+    <App todos={todos} />,
     document.getElementById("root")
 )
