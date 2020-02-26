@@ -4,13 +4,17 @@ import Item from "./Item"
 // mapメソッドを用いてItemを回す
 // mapメソッド→配列の要素全てに同じ処理をするもの
 
-const List = ({ todos }) => {
+const List = ({ todos, deleteTodo }) => {
+
+    const row = todos.map(todo =>
+        <Item
+            todo={todo}
+            key={todo.id}
+            deleteTodo={deleteTodo}
+        />)
     return (
         <ul>
-            <Item todo={todos[0]} />
-            <Item todo={todos[1]} />
-            <Item todo={todos[2]} />
-            <Item todo={todos[3]} />
+            {row}
         </ul>
     )
 }

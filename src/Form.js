@@ -1,9 +1,25 @@
-import React from "react"
+import React, { useState } from "react"
 
-const Form = () => {
+const Form = ({ addTodo }) => {
+    const [value, setValue] = useState('')
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        //Todoを「どのように」追加するのかApp.js
+        addTodo(value)
+    }
+    const handleChange = (e) => {
+        setValue(e.target.value)
+    }
     return (
-        <form action="#">
-            <input type="text" />
+        <form
+            action="#"
+            onSubmit={handleSubmit}
+        >
+            <input
+                type="text"
+                value={value}
+                onchange={handleChange}
+            />
             <button type="submit">追加</button>
         </form>
     )
