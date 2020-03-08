@@ -1,12 +1,25 @@
 import React from "react"
 
-const Item = ({ todo, deleteTodo }) => {
+const Item = ({
+    todo,
+    deleteTodo,
+    id,
+    toggleIsDone
+}) => {
     const handleDelete = () => {
-        deleteTodo(todo.id)
+        if (window.confirm("本当に削除しますか？")) {
+            deleteTodo(id)
+        }
     }
     return (
         <li>
-            <p>{todo.note}</p>
+            <input
+                type="checkbox"
+                onChange={() => {
+                    toggleIsDone(id)
+                }}
+            />
+            <span>{todo.note}</span>
             <button
                 type="text"
                 onClick={handleDelete}

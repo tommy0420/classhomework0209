@@ -4,9 +4,18 @@ const Form = ({ addTodo }) => {
     const [value, setValue] = useState('')
     const handleSubmit = (e) => {
         e.preventDefault()
-        //Todoを「どのように」追加するのかApp.js
+
+        // 空の場合は、アラートを出し、処理を中断させる
+        if (!value) {
+            alert("入力してください")
+            return
+        }
+
         addTodo(value)
+
+        setValue('')
     }
+
     const handleChange = (e) => {
         setValue(e.target.value)
     }
@@ -17,8 +26,9 @@ const Form = ({ addTodo }) => {
         >
             <input
                 type="text"
+
                 value={value}
-                onchange={handleChange}
+                onChange={handleChange}
             />
             <button type="submit">追加</button>
         </form>
